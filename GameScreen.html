@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="GameScreenLooks.css">
+        <script src="GameLogic.js"></script>
+    </head>
+    <body onload="initialize()">
+    <button class="instructions">
+        <span>Instructions</span>
+        <div class="instructions-content">
+            <p>
+                This version of Tic Tac Toe plays mechanically like regular Tic Tac Toe.  One player is X and the other is O.
+                Turn by turn, each player puts his or her letter into one of the squares on the 3X3 grid.
+                If there are 3 in a row (vertically, horizontally, or diagonally) that player is the winner.
+                Two Layer Tic Tac Toe differs in that players can take spaces away from one another.
+                A space can only be locked if you take it twice.
+                For example, if you put your X on the center square, the other player can place his or her O on the center square later and take it away from you.
+                If you place a second X on the center square before your opponent takes it away, you’ve claimed it for good.
+                Because of the layered nature of the game, there are a couple of new rules.
+                If there is a letter on the space, whether once or twice, the space is considered held by that player.
+                A player can win the game with connected single-layer captures.
+                A player may not move on the same space his or her opponent took on the previous turn.
+                For example, if I take the center square, you cannot move onto the center square on your very next turn.
+                You can only do it on a later turn.
+            </p>
+        </div>
+    </button>
+        <table id = "table">
+            <tr>
+                <th id = "r1c1">" "</th>
+                <th id = "r1c2"></th>
+                <th id = "r1c3"></th>
+            </tr>
+            <tr>
+                <th id = "r2c1"></th>
+                <th id = "r2c2"></th>
+                <th id = "r2c3"></th>
+            </tr>
+            <tr>
+                <th id = "r3c1"></th>
+                <th id = "r3c2"></th>
+                <th id = "r3c3"></th>
+            </tr>
+        </table>
+        <button id="reset" onclick = "goBack();">Reset</button>
+        <div id="winner"></div>
+    </body>
+</html>

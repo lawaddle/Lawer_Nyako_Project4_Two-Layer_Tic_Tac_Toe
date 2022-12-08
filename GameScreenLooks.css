@@ -1,0 +1,58 @@
+table
+{
+    border-collapse: separate;
+    empty-cells: show;
+    table-layout: fixed ;
+    width: 50% ;
+}
+th{
+    border: thick solid lightgrey;
+    border-collapse: collapse;
+    width: 25%;
+    height: 5rem;
+    font-size: 4rem;
+    font-family: raleway, sans-serif;
+
+}
+
+@font-face {
+    font-family: "myFont";
+    src: url("Raleway-Medium.woff") format("woff");;
+}
+
+.instructions {
+    position: relative;
+    display: inline-block;
+    border: 2px solid black;
+    background-color: lightblue;
+    font-family: "myFont", sans-serif;
+}
+
+.instructions-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.instructions:hover .instructions-content{
+    display: block;
+    fill: white;
+    border: 2px solid cadetblue;
+}
+
+#winner{
+    font-family: oswald, sans-serif;
+}
+
+#reset {
+    display: block;
+    transition-duration: 0.4s;
+}
+
+#reset:hover {
+    border: 2px solid #4CAF50;
+}
