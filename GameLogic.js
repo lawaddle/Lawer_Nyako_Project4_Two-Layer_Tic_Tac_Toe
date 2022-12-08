@@ -302,13 +302,8 @@ function display()
             {
                 if(arr !== null) {
                     winningLetter = arr[0].letter;
-                    if(winningLetter === player.letter)
-                    {
-                        winningName = player.name;
-                    } else
-                    {
-                        winningName = computer.name;
-                    }
+                    winningName = winningLetter === player.letter ? player.name : computer.name;
+
                     arr.forEach((square) => {
                         square.document.style.backgroundColor = "lightgrey";
                     });
