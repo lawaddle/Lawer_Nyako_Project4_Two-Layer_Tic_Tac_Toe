@@ -15,6 +15,22 @@ th{
 
 }
 
+.container
+{
+    display: flex;
+}
+
+.letter{
+    border: thick solid lightgrey;
+    border-collapse: collapse;
+    width: 25%;
+    height: 5rem;
+    font-size: 4.75rem;
+    font-family: raleway, sans-serif;
+    text-align: center;
+}
+
+
 @font-face {
     font-family: "myFont";
     src: url("Raleway-Medium.woff") format("woff");;

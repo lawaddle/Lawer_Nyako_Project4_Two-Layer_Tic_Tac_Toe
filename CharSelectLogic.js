@@ -3,9 +3,9 @@ let confirmButtonDis, xButtonDis, oButtonDis, currentChoice,
 
 function initialize()
 {
-    confirmButtonDis = document.getElementById("confirm");
-    xButtonDis = document.getElementById("XButton");
-    oButtonDis = document.getElementById("OButton");
+    confirmButtonDis = document.querySelector("#confirm");
+    xButtonDis = document.querySelector("#XButton");
+    oButtonDis = document.querySelector("#OButton");
     showFinalButton = false;
     numberOfSelections = 0;
     console.log(Letters.XLetter.option);

@@ -12,9 +12,28 @@ th{
     height: 5rem;
     font-size: 4rem;
     font-family: raleway, sans-serif;
+    text-align: center;
 
 }
 
+
+#board{
+    display: grid;
+    grid-template: repeat(3, 100px) / repeat(3, 100px);
+    align-items: center;
+    justify-items: center;
+    grid-column-gap: 10px;
+}
+
+#board > *{
+    border: 5px solid lightgrey;
+    width: 100%;
+    font-size: 5rem;
+    font-family: raleway, sans-serif;
+    text-align: center;
+    justify-self: center;
+
+}
 @font-face {
     font-family: "myFont";
     src: url("Raleway-Medium.woff") format("woff");;

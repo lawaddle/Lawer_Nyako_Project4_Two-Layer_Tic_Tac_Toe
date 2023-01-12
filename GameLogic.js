@@ -1,5 +1,5 @@
 let gameBoard, r1c1, r1c2, r1c3, r2c1, r2c2, r2c3, r3c1, r3c2, r3c3, player, computer,
-    turnFunction, tableDisplay, winnerDisplay;
+    turnFunction, boardDisplay, winnerDisplay;
 let winningSquares = {hori: null, vert: null, dia: null, diaRev: null};;
 const ifNoWinners = (array) => Object.values(array).every(x => x === null);
 const allEqual = arr => arr.every( v => v === arr[0] );
@@ -16,17 +16,17 @@ function initialize()
         playerLetter = Letters.OLetter;
         computerLetter = Letters.XLetter;
     }
-    let rw1cl1 = document.getElementById("r1c1");
-    let rw1cl2 = document.getElementById("r1c2");
-    let rw1cl3 = document.getElementById("r1c3");
-    let rw2cl1 = document.getElementById("r2c1");
-    let rw2cl2 = document.getElementById("r2c2");
-    let rw2cl3 = document.getElementById("r2c3");
-    let rw3cl1 = document.getElementById("r3c1");
-    let rw3cl2 = document.getElementById("r3c2");
-    let rw3cl3 = document.getElementById("r3c3");
-    tableDisplay = document.getElementById("table");
-    winnerDisplay = document.getElementById("winner");
+    let rw1cl1 = document.querySelector("#r1c1");
+    let rw1cl2 = document.querySelector("#r1c2");
+    let rw1cl3 = document.querySelector("#r1c3");
+    let rw2cl1 = document.querySelector("#r2c1");
+    let rw2cl2 = document.querySelector("#r2c2");
+    let rw2cl3 = document.querySelector("#r2c3");
+    let rw3cl1 = document.querySelector("#r3c1");
+    let rw3cl2 = document.querySelector("#r3c2");
+    let rw3cl3 = document.querySelector("#r3c3");
+    boardDisplay = document.querySelector("#board");
+    winnerDisplay = document.querySelector("#winner");
 
     r1c1 = new GameSpace(Letters.HollowLetter, SpaceState.Empty, rw1cl1, new AbortController());
     r1c2 = new GameSpace(Letters.HollowLetter, SpaceState.Empty, rw1cl2, new AbortController());
@@ -257,7 +257,7 @@ function checkAllSameLetter(array)
     }
     return array.every(value => {
         return value.letter === array[0].letter;
-    })
+    });
 
 }
 
@@ -316,7 +316,7 @@ function display()
             else
                 winnerDisplay.innerHTML+="</br> You Lose";
     }
-    tableDisplay.style.emptyCells = 'show';
+    boardDisplay.style.emptyCells = 'show';
 }
 
 function goBack()
