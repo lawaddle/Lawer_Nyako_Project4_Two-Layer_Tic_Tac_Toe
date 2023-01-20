@@ -1,17 +1,20 @@
 let confirmButtonDis, xButtonDis, oButtonDis, currentChoice,
-    showFinalButton, numberOfSelections;
+    showFinalButton, numberOfSelections, audio;
 
 function initialize()
 {
     confirmButtonDis = document.querySelector("#confirm");
     xButtonDis = document.querySelector("#XButton");
-    oButtonDis = document.querySelector("#OButton");
+    oButtonDis = document.querySelector("#OButton")
+    audio = document.querySelector("audio");
+    audio.play();
     showFinalButton = false;
     numberOfSelections = 0;
     console.log(Letters.XLetter.option);
     confirmButtonDis.addEventListener("click", () => {
         console.log("hi");
         sessionStorage.setItem("playerChar", currentChoice);
+        audio.pause();
         window.location.href = "GameScreen.html";
     });
 

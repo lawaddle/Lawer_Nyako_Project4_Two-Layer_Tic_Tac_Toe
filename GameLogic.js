@@ -1,5 +1,5 @@
 let gameBoard, r1c1, r1c2, r1c3, r2c1, r2c2, r2c3, r3c1, r3c2, r3c3, player, computer,
-    turnFunction, boardDisplay, winnerDisplay;
+    turnFunction, boardDisplay, winnerDisplay, audio, bgMusic;
 let winningSquares = {hori: null, vert: null, dia: null, diaRev: null};;
 const ifNoWinners = (array) => Object.values(array).every(x => x === null);
 const allEqual = arr => arr.every( v => v === arr[0] );
@@ -27,6 +27,10 @@ function initialize()
     let rw3cl3 = document.querySelector("#r3c3");
     boardDisplay = document.querySelector("#board");
     winnerDisplay = document.querySelector("#winner");
+    audio = document.querySelector("audio");
+    bgMusic = document.querySelector("#bgMusic");
+    audio.load();
+    audio.play();
 
     r1c1 = new GameSpace(Letters.HollowLetter, SpaceState.Empty, rw1cl1, new AbortController());
     r1c2 = new GameSpace(Letters.HollowLetter, SpaceState.Empty, rw1cl2, new AbortController());
@@ -312,17 +316,25 @@ function display()
                     });
                 }
             });
-            winnerDisplay.innerHTML =`The winner is ${winningLetter.alpha}: The ${winningName}`;
 
-        if(winningName === player.name)
-                winnerDisplay.innerHTML+="</br> You Win";
-            else
-                winnerDisplay.innerHTML+="</br> You Lose";
+            winnerDisplay.innerHTML =`The winner is ${winningLetter.alpha}: The ${winningName}`;
+            audio.pause();
+            audio.load();
+        if(winningName === player.name) {
+            bgMusic.src = "Multiplayer_Turf_Master.ogg";
+            bgMusic.type = "audio/ogg";
+            winnerDisplay.innerHTML += "</br> You Win";
+        } else {
+            bgMusic.src = "Multiplayer_Ink_Another_Day.ogg";
+            bgMusic.type = "audio/ogg";
+            winnerDisplay.innerHTML += "</br> You Lose";
+        }
     }
     boardDisplay.style.emptyCells = 'show';
 }
 
 function goBack()
 {
+    audio.play();
     window.location.href = "CharSelectScreen.html";
 }
