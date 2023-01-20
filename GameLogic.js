@@ -284,7 +284,7 @@ function display()
     for (let i = 0; i < gameBoard.length; i++) {
         for (let j = 0; j < gameBoard[0].length; j++) {
             let gameSquare = gameBoard[i][j];
-            gameSquare.document.innerHTML = gameSquare.letter.alpha
+            gameSquare.document.innerHTML = gameSquare.letter.alpha;
             gameSquare.document.style.color = gameSquare.letter.color;
             if(gameSquare.state === SpaceState.Captured)
             {
