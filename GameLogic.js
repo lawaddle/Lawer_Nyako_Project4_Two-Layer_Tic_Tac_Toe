@@ -191,7 +191,10 @@ class SpaceState{
 }
 
 function checkForTicTacToe(array2d) {
-    return {hori: checkHori(array2d), vert: checkVert(array2d), dia: checkDia(array2d), diaRev: checkDiaRev(array2d)};
+    return {hori: checkHori(array2d),
+        vert: checkVert(array2d),
+        dia: checkDia(array2d),
+        diaRev: checkDiaRev(array2d)};
 
 }
 
