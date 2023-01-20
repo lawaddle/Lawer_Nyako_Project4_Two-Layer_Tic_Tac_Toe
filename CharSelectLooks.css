@@ -1,20 +1,3 @@
-table
-{
-    border-collapse: separate;
-    empty-cells: show;
-    table-layout: fixed ;
-    width: 50% ;
-}
-th{
-    border: thick solid lightgrey;
-    border-collapse: collapse;
-    width: 25%;
-    height: 5rem;
-    font-size: 4rem;
-    font-family: raleway, sans-serif;
-
-}
-
 .container
 {
     display: flex;
