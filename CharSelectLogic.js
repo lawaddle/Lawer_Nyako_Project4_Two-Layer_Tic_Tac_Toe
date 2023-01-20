@@ -7,6 +7,7 @@ function initialize()
     xButtonDis = document.querySelector("#XButton");
     oButtonDis = document.querySelector("#OButton")
     audio = document.querySelector("audio");
+    audio.load();
     audio.play();
     showFinalButton = false;
     numberOfSelections = 0;
